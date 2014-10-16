@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="hibernate-default">
+		<action name="saveOrUpdateTask" method="saveOrUpdate" class="com.Todo.web.TaskAction">
+			<result name="success" type="redirect">listTask</result>
+		</action>
+		<action name="listTask" method="list" class="com.Todo.web.TaskAction">
+			<result name="success">/register.jsp</result>
+		</action>
+		<action name="editTask" method="edit" class="com.Todo.web.TaskAction">
+			<result name="success">/register.jsp</result>
+		</action>
+		<action name="deleteTask" method="delete" class="com.Todo.web.TaskAction">
+			<result name="success" type="redirect">listTask</result>
+		</action>
+	</package>
+</struts>
